@@ -33,7 +33,6 @@ var settings = {
 emojione.ascii = true;
 emojione.imageType = 'png';
 emojione.unicodeAlt = false;
-document.getElementById('version').innerHTML = version;
 
 
 /* Connection */
@@ -477,7 +476,7 @@ function updateStyle() {
 
 /* Binds */
 $(document).ready(function() {
-    $('#user').bind('click', function() {
+    $('#users').bind('click', function() {
         var content = '';
         var userip = '';
         var admin;
