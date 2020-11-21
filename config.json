@@ -1,11 +1,11 @@
 {
 	"log": true,
-	"port": 3000,
+	"port": 5557,
 	"url": "/",
 	"ssl": {
 		"use": false,
-		"key": "/path/to/your/ssl.key",
-		"cert": "/path/to/your/ssl.crt"	
+		"key": "/etc/nginx/snippets/luftaquila.io-ssl-bundle/private.key.pem",
+		"cert": "/etc/nginx/snippets/luftaquila.io-ssl-bundle/domain.cert.pem"
 	},
         "readline": {
         	"use": true,
