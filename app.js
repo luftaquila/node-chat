@@ -219,6 +219,20 @@ function handleSocket(user, message) {
             break;
 
         case 'global': case 'kick': case 'ban': case 'role':
+            if(data.type == 'role' && data.extra == 9) {
+                var payload = {};
+                var string = 'System gave ' + data.message + ' administrator permissions';
+
+                payload.message = string;
+                payload.user = 'Console';
+                payload.type = 'role';
+                payload.extra = data.message;
+                payload.role = 3;
+
+                utils.sendToAll(clients, payload);
+                utils.sendToOne(clients, users, payload, data.message, data.type);
+                return;
+            }
             if(user.role > 0) {
                 if(data.type == 'global') {
                     if(user.role == 3) {
